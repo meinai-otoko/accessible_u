@@ -18,6 +18,31 @@
 	<script src="scripts/before-form.js"></script>
 	<script src="scripts/before-modal.js"></script>
 	<script src="scripts/before-hero.js"></script>
+	<!-- Added new styles for accessibility fixes -->
+  <style>
+    .carousel a:focus {
+      outline: 3px solid #2196F3;
+      outline-offset: 2px;
+    }
+
+    .carousel img {
+      border: 2px solid transparent;
+    }
+
+    .carousel a:focus img {
+      border-color: #2196F3;
+    }
+
+    .required-indicator {
+      color: #d00;
+      margin-left: 3px;
+    }
+
+    .form-requirements {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <div id="content">
@@ -46,10 +71,15 @@
               <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#"
-                  data-toggle="dropdown">
-                  About
-              </a>
+            <a class="nav-link dropdown-toggle" href="#" 
+               data-toggle="dropdown"
+               role="button"
+              aria-expanded="false"
+             aria-haspopup="true"
+             tabindex="0">
+             About
+             </a>
+             </li>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">News</a></li>
                 <li><a class="dropdown-item" href="#">Governance</a></li>
@@ -132,7 +162,7 @@
                   the inaccessible design of this page sends the opposite message.
                 </p>
               </div>
-
+              <div lang="es">
               <div class="heading">Bienvenido!</div>
               <p>Accesible Universidad (UA) es una universidad ficticia, y esta es su
                 página de ficción. Esta página está diseñada para demostrar una variedad de
